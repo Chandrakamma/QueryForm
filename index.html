@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Query Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #2436bc;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        padding: 40px;
+    }
+    #countryCode {
+        width: 30%;
+        height: 50px;
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+    }
+    label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .required::after {
+        content: "*";
+        color: red;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"], 
+    textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 16px;
+        transition: border-color 0.3s ease; 
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    textarea:focus {
+        border-color: #4CAF50; 
+    }
+    textarea {
+        height: 150px;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+        width: 100%;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    .container:hover {
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);   
+    }
+    
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Query Form</h1>
+    <form id="queryForm">
+        <label class="required" for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label class="required" for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label class="required" for="phone">Phone Number:</label> 
+        <div style="display: flex;">
+            <select id="countryCode" name="countryCode" style="flex: 0.2;height: 50px;width: 10%;">
+                <option value="+91">+91 (India)</option>
+                <option value="+1">+1 (USA)</option>
+                <option value="+44">+44 (UK)</option>
+                <option value="+61">+61 (Australia)</option>
+            </select>
+            <input type="tel" id="phoneNumber" name="phoneNumber" style="flex: 0.8; width: 100%;" placeholder="Enter phone number" required>
+        </div>
+        <label class="required" for="query">Query:</label>
+        <textarea id="query" name="query" required></textarea>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>
